@@ -5,10 +5,10 @@ metadata:
   annotations:
 {{ tpl (toYaml .Values.service.annotations) . | indent 4 }}
 {{- end }}
-  name: {{ include "chart.fullname" . }}
+  name: {{ include "charts.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "chart.name" . }}
-    helm.sh/chart: {{ include "chart.chart" . }}
+    app.kubernetes.io/name: {{ include "charts.name" . }}
+    helm.sh/chart: {{ include "charts.charts" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
@@ -22,5 +22,5 @@ spec:
       nodePort: {{.Values.service.nodePort}}
 {{ end }}
   selector:
-    app.kubernetes.io/name: {{ include "chart.name" . }}
+    app.kubernetes.io/name: {{ include "charts.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}

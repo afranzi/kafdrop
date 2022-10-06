@@ -120,14 +120,14 @@ git clone https://github.com/obsidiandynamics/kafdrop && cd kafdrop
 
 Apply the chart:
 ```sh
-helm upgrade -i kafdrop chart --set image.tag=3.x.x \
+helm upgrade -i kafdrop charts --set image.tag=3.x.x \
     --set kafka.brokerConnect=<host:port,host:port> \
     --set server.servlet.contextPath="/" \
     --set cmdArgs="--message.format=AVRO --schemaregistry.connect=http://localhost:8080" \ #optional
     --set jvm.opts="-Xms32M -Xmx64M"
 ```
 
-For all Helm configuration options, have a peek into [chart/values.yaml](chart/values.yaml).
+For all Helm configuration options, have a peek into [chart/values.yaml](charts/kafdrop/values.yaml).
 
 Replace `3.x.x` with the image tag of [obsidiandynamics/kafdrop](https://hub.docker.com/r/obsidiandynamics/kafdrop). Services will be bound on port 9000 by default (node port 30900).
 
@@ -146,7 +146,7 @@ To install with protobuf support, a "facility" option is provided for the deploy
 Example:
 
 ```sh
-helm upgrade -i kafdrop chart --set image.tag=3.x.x \
+helm upgrade -i kafdrop charts --set image.tag=3.x.x \
     --set kafka.brokerConnect=<host:port,host:port> \
     --set server.servlet.contextPath="/" \
     --set mountProtoDesc.enabled=true \
@@ -284,7 +284,7 @@ docker run -d --rm -p 9000:9000 \
 Like in the Docker example, supply the files in base-64 form:
 
 ```sh
-helm upgrade -i kafdrop chart --set image.tag=3.x.x \
+helm upgrade -i kafdrop charts --set image.tag=3.x.x \
     --set kafka.brokerConnect=<host:port,host:port> \
     --set kafka.properties="$(cat kafka.properties | base64)" \
     --set kafka.truststore="$(cat kafka.truststore.jks | base64)" \
