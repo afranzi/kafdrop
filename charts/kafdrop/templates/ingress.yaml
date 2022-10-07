@@ -6,10 +6,7 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ include "kafdrop.name" . }}
-    helm.sh/chart: {{ include "kafdrop.charts" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    {{ include "kafdrop.labels" . | nindent 4 }}
 {{- with $ingress.annotations }}
   annotations:
 {{ toYaml . | indent 4 }}
