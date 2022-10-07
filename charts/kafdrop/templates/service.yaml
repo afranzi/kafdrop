@@ -5,10 +5,10 @@ metadata:
   annotations:
 {{ tpl (toYaml .Values.service.annotations) . | indent 4 }}
 {{- end }}
-  name: {{ include "charts.fullname" . }}
+  name: {{ include "kafdrop.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "charts.name" . }}
-    helm.sh/chart: {{ include "charts.charts" . }}
+    app.kubernetes.io/name: {{ include "kafdrop.name" . }}
+    helm.sh/chart: {{ include "kafdrop.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
@@ -22,5 +22,5 @@ spec:
       nodePort: {{.Values.service.nodePort}}
 {{ end }}
   selector:
-    app.kubernetes.io/name: {{ include "charts.name" . }}
+    app.kubernetes.io/name: {{ include "kafdrop.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}

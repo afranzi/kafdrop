@@ -1,6 +1,6 @@
 apiVersion: v2
-appVersion: "3.x"
-description: A Helm charts for Kafdrop
 name: kafdrop
-version: 0.1.1
+description: A Helm charts for Kafdrop
 type: application
+version: 0.1.2
+appVersion: "3.x"
