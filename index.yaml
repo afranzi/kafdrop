@@ -3,6 +3,16 @@ entries:
   kafdrop:
   - apiVersion: v2
     appVersion: 3.x
+    created: "2022-10-07T08:34:33.137545067Z"
+    description: A Helm charts for Kafdrop
+    digest: b3eac519aecec4c59ad55d25142c312cdf211e132d24f26c4557a7527986a2c9
+    name: kafdrop
+    type: application
+    urls:
+    - https://github.com/afranzi/kafdrop/releases/download/kafdrop-0.1.2/kafdrop-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 3.x
     created: "2022-10-06T21:21:21.202827322Z"
     description: A Helm charts for Kafdrop
     digest: dabf5e7a656c3da364024698f4b5722d03ac49e868e7f38eac57b866a509395d
@@ -20,4 +30,4 @@ entries:
     urls:
     - https://github.com/afranzi/kafdrop/releases/download/kafdrop-0.1.0/kafdrop-0.1.0.tgz
     version: 0.1.0
-generated: "2022-10-06T21:21:21.202838722Z"
+generated: "2022-10-07T08:34:33.137555068Z"
